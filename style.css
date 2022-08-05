@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,600&family=Raleway:ital,wght@0,400;0,700;1,200&display=swap');
+
+*{  
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 20px;
+    font-family: 'Poppins','Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+   }
+   a{
+    text-decoration: none;
+   }
+   .container{
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       }
+
+    /*Seção de apresentação */
+
+    #presentation{
+        background-image: url(./backgroud_programming.jpg);
+        background-size: cover;
+        background-position: top center;
+        position: relative;
+        opacity:9;
+        z-index:1;;
+       
+    }
+    #presentation h1{
+        display:  block;
+        width: fit-content;
+        font-size: 2rem;
+        position: relative;
+        color:transparent;
+        animation: text_reveal .5s ease forwards;
+        animation-delay: 1.5s;
+
+      }
+
+    #presentation h1:nth-child(1){
+        animation-delay: .8s;
+    }
+
+    #presentation h1:nth-child(2){
+        animation-delay: 2.4s;
+    }
+    #presentation .cta{
+        display: inline-block;
+        padding: 15px 30px;
+        color: gold;
+        background-color: transparent;
+        border: 3px solid gold;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        margin-top: 20px;
+        transition: .6s ease;
+        transition-property: background-color, color;
+    }
+    #presentation .cta:hover{
+        color: white;
+        font-weight: 700;
+        background-color: goldenrod;
+    }
+    #presentation h1 span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        animation: text_reveal_box 1.5s ease;
+        animation-delay: .5s;
+        background-color: gold;
+
+    }
+    #presentation h1:nth-child(1) span{
+    animation-delay: .5s; 
+    }
+    #presentation h1:nth-child(2) span{
+    animation-delay: 1.8s; 
+
+}
+    #presentation ::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity:0.3;
+        z-index: -1;
+    }
+
+    /*Seção de Portifólio*/
+
+    #portfolio .portfolio{
+        flex-direction: column;
+        max-width: 1200px;
+        margin:auto;
+        padding:  100px 0;
+    }
+    #portfolio .portfolio header h1 {
+        margin-bottom: 50px;
+    }
+#portfolio .project-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border: radius 10px;;
+}
+
+    /*KeyFrames */
+@keyframes text_reveal{
+    100% {
+        color: white;
+    }
+}
+
+    @keyframes text_reveal_box{
+        40%{
+            width: 100%;
+            left: 0
+        }
+        100% {
+            width: 0;
+            left: 100%;
+        }
+    }
